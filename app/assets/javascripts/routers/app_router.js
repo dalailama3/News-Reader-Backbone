@@ -1,7 +1,10 @@
 window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
   routes: {
-    "": "feedIndex"
+    "": "feedIndex",
+    "feeds/:id": "feedShow"
   },
+
+  currentView: null,
 
   feedIndex: function () {
 
@@ -10,8 +13,20 @@ window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
     });
 
     NewsReader.Collections.feeds.fetch();
-    $("body").html(indexView.render().$el);
+    this._swapView(indexView);
+  },
 
+  feedShow: function (id) {
+    var showView = new NewsReader.Views.FeedsShow();
 
+  },
+
+  _swapView: function (view) {
+    if (this.currentView) {
+      this.currentView.remove()
+    }
+    this.currentView = view;
+
+    $("body").append(view.render().$el);
   }
 });
