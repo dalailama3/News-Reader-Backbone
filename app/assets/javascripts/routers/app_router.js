@@ -9,12 +9,8 @@ window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
       collection: NewsReader.Collections.feeds
     });
 
-    NewsReader.Collections.feeds.fetch({
-      success: function () {
-        $("body").append(indexView.render().$el);
-      }
-
-    });
+    NewsReader.Collections.feeds.fetch();
+    $("body").html(indexView.render().$el);
 
 
   }
