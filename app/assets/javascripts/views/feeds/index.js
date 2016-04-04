@@ -6,7 +6,6 @@ window.NewsReader.Views.FeedsIndex = Backbone.View.extend({
   },
 
   render: function () {
-  
     var that = this;
 
     this.collection.each(function (feed) {

@@ -1,9 +1,8 @@
 
+<h3><%= feed.escape("title") %> Feed</h3>
 <ul>
-  <% _.each(entries.models, function (entry) { %>
+  <% _.each(feed.entries().models, function (entry) { %>
     <li><%= entry.escape("title") %></li>
-
-
   <% })%>
 
 
