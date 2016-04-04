@@ -1,10 +1,17 @@
 window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     "": "feedIndex",
-    "feeds/:id": "feedShow"
+    "feeds/new": "feedNew",
+    "feeds/:id": "feedShow",
   },
 
   currentView: null,
+
+  feedNew: function () {
+    var newView = new NewsReader.Views.FeedsNew();
+
+    this._swapView(newView);
+  },
 
   feedIndex: function () {
 
