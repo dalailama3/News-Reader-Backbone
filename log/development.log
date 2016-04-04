@@ -17122,3 +17122,1413 @@ Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 01:52:55 -0400
 Processing by Api::FeedsController#index as JSON
   [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds"
 Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:21:00 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (3.9ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (24.2ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:21:00.320988' WHERE "feeds"."id" = 6
+  [1m[36m (1.4ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00], ["feed_id", 6], ["guid", "http://www.bbc.co.uk/news/world-middle-east-35942072"], ["json", "{\"title\":\"VIDEO: Fleeing Mosul under shadow of IS\",\"link\":\"http://www.bbc.co.uk/news/world-middle-east-35942072#sa-ns_mchannel=rss\\u0026amp;ns_source=PublicRSS20-sa\",\"description\":\"BBC Persian's Nafiseh Kouhnavard travelled to an Iraqi military checkpoint near the front line to meet people escaping Islamic State.\",\"pubDate\":\"2016-04-04T01:41:21-04:00\",\"guid\":\"http://www.bbc.co.uk/news/world-middle-east-35942072\",\"media_thumbnail_url\":\"http://c.files.bbci.co.uk/166D8/production/_89046819_89042090.jpg\",\"media_thumbnail_height\":\"49\",\"media_thumbnail_width\":\"66\"}"], ["link", "http://www.bbc.co.uk/news/world-middle-east-35942072#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa"], ["published_at", Mon, 04 Apr 2016 05:41:21 UTC +00:00], ["title", "VIDEO: Fleeing Mosul under shadow of IS"], ["updated_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00], ["feed_id", 6], ["guid", "http://www.bbc.co.uk/sport/0/cricket/35955646"], ["json", "{\"title\":\"'T20 isn't killing Caribbean cricket. It's keeping it alive'\",\"link\":\"http://www.bbc.co.uk/sport/0/cricket/35955646\",\"description\":\"T20 isn't killing Caribbean cricket - far from it\",\"pubDate\":\"2016-04-03T18:53:18-04:00\",\"guid\":\"http://www.bbc.co.uk/sport/0/cricket/35955646\"}"], ["link", "http://www.bbc.co.uk/sport/0/cricket/35955646"], ["published_at", Sun, 03 Apr 2016 22:53:18 UTC +00:00], ["title", "'T20 isn't killing Caribbean cricket. It's keeping it alive'"], ["updated_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00], ["feed_id", 6], ["guid", "http://www.bbc.co.uk/news/business-35945103"], ["json", "{\"title\":\"China's overheated property market\",\"link\":\"http://www.bbc.co.uk/news/business-35945103#sa-ns_mchannel=rss\\u0026amp;ns_source=PublicRSS20-sa\",\"description\":\"China’s housing bubble balancing act\",\"pubDate\":\"2016-04-03T16:50:03-04:00\",\"guid\":\"http://www.bbc.co.uk/news/business-35945103\"}"], ["link", "http://www.bbc.co.uk/news/business-35945103#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa"], ["published_at", Sun, 03 Apr 2016 20:50:03 UTC +00:00], ["title", "China's overheated property market"], ["updated_at", Mon, 04 Apr 2016 06:21:00 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mEntry Load (2.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 6]]
+Completed 200 OK in 535ms (Views: 464.8ms | ActiveRecord: 52.2ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:21:19 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.7ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:21:25 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (0.9ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:21:25.767585' WHERE "feeds"."id" = 7
+  [1m[36m (1.1ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 384ms (Views: 379.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:21:33 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 537ms (Views: 537.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:02 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:03 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:26:03 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:26:05 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (1.5ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:26:05.408919' WHERE "feeds"."id" = 6
+  [1m[36m (0.9ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 373ms (Views: 367.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 337ms (Views: 336.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:26:31 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (0.9ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:26:31.880240' WHERE "feeds"."id" = 6
+  [1m[36m (1.4ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 1514ms (Views: 1509.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:26:33 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (0.7ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:26:33.407715' WHERE "feeds"."id" = 6
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (25.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 538ms (Views: 510.1ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 306ms (Views: 305.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:27:56 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:27:56.975061' WHERE "feeds"."id" = 6
+  [1m[36m (1.1ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.9ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 429ms (Views: 424.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:27:57 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:27:57.454838' WHERE "feeds"."id" = 6
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 455ms (Views: 450.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:28:14 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2016-04-04 02:28:17 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:28:17.298536' WHERE "feeds"."id" = 2[0m
+  [1m[35m (1.0ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 2]]
+Completed 200 OK in 350ms (Views: 345.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:28:19 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:28:23 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:28:24 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:28:25 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:28:25.826156' WHERE "feeds"."id" = 7[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 7]]
+Completed 200 OK in 334ms (Views: 330.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:29:01 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:32:25 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 409ms (Views: 408.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:32:26 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:32:29 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mSQL (5.9ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:32:29.434078' WHERE "feeds"."id" = 7[0m
+  [1m[35m (1.1ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 7]]
+Completed 200 OK in 289ms (Views: 279.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:32:39 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:32:39.788154' WHERE "feeds"."id" = 7[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 7]]
+Completed 200 OK in 282ms (Views: 278.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:32:46 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mSQL (31.9ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:32:46.321843' WHERE "feeds"."id" = 7[0m
+  [1m[35m (1.0ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 7]]
+Completed 200 OK in 345ms (Views: 310.2ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:33:10 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 67ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:33:11 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:33:18 -0400
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:33:31 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSQL (1.2ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:33:31.104948' WHERE "feeds"."id" = 3
+  [1m[36m (1.0ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (15.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:33:31 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/2016/04/04/472922066/under-eu-deal-greek-authorities-board-migrants-on-boats-to-turkey?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"Under EU Deal, Greek Authorities Deport Migrants On Boats To Turkey\",\"link\":\"http://www.npr.org/2016/04/04/472922066/under-eu-deal-greek-authorities-board-migrants-on-boats-to-turkey?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"Authorities on the Greek islands of Lesbos and Chios deported 202 migrants and refugees on boats bound for Turkey —  part of a controversial EU plan to limit the amount of migration to Europe.\",\"content_encoded\":\"\\u003Cp\\u003EAuthorities on the Greek islands of Lesbos and Chios deported 202 migrants and refugees on boats bound for Turkey —  part of a controversial EU plan to limit the amount of migration to Europe.\\u003C/p\\u003E\",\"pubDate\":\"2016-04-04T02:07:00-04:00\",\"guid\":\"http://www.npr.org/2016/04/04/472922066/under-eu-deal-greek-authorities-board-migrants-on-boats-to-turkey?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"The Associated Press\"}"], ["link", "http://www.npr.org/2016/04/04/472922066/under-eu-deal-greek-authorities-board-migrants-on-boats-to-turkey?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Mon, 04 Apr 2016 06:07:00 UTC +00:00], ["title", "Under EU Deal, Greek Authorities Deport Migrants On Boats To Turkey"], ["updated_at", Mon, 04 Apr 2016 06:33:31 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mEntry Load (1.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 225ms (Views: 203.9ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:33:41 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (136.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:33:41.607758' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.7ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 302ms (Views: 163.4ms | ActiveRecord: 138.2ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:33:45 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:33:45.392998' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 164ms (Views: 158.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:33:54 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:33:54.951903' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 181ms (Views: 176.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:34:36 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 414ms (Views: 413.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:34:37.735978' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.8ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 195ms (Views: 191.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:34:37 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.9ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:34:37.939181' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 173ms (Views: 168.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:34:43 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:34:43.572639' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.8ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 177ms (Views: 172.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:34:49 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:34:51 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (94.0ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:34:51.226049' WHERE "feeds"."id" = 7
+  [1m[36m (1.0ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 374ms (Views: 277.4ms | ActiveRecord: 96.3ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:34:55 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (0.7ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:34:55.555282' WHERE "feeds"."id" = 7
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 269ms (Views: 265.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:35:18 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:35:19 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 393ms (Views: 392.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:35:20 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:35:24 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (1.3ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:35:24.400196' WHERE "feeds"."id" = 7
+  [1m[36m (0.7ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 256ms (Views: 252.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:35:28 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:35:28.677266' WHERE "feeds"."id" = 7
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (0.9ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 226ms (Views: 221.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:36:04 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2016-04-04 02:36:13 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:36:13.712017' WHERE "feeds"."id" = 4[0m
+  [1m[35m (0.8ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (55.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653836"], ["json", "{\"title\":\"China\\u0026#8217;s elite—including Xi Jinping—are linked to offshore deals that hid millions of dollars\",\"link\":\"http://qz.com/653836/chinas-elite-including-xi-jinping-are-linked-to-offshore-deals-that-hid-millions-of-dollars/\",\"description\":\"At least eight top Chinese officials are linked to offshore deals through associates, an investigation into 11 million leaked documents from one of the world\\u0026#8217;s\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653836\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2016/04/rtr1v6v5-e1459743837169.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"Xi Jinping and Jia Qinglin (L) as new members of Politburo Standing Committee in 2007.\\\" /\\u003E\\u003Cp\\u003EAt least eight top Chinese officials are linked to offshore deals through associates, an investigation into \\u003Ca href=\\\"http://qz.com/653734/putin-and-other-word-leaders-connected-to-offshore-deals-in-massive-leak/\\\"\\u003E11 million leaked documents\\u003C/a\\u003E from one of the world\\u0026#8217;s largest offshore law firms shows. They include the brother-in-law of Chinese president Xi Jinping, whose offshore firms went dormant before Xi came into power, and the granddaughter of a former top leader who bought an offshore company for just $1.\\u003C/p\\u003E\\n\\u003Cp\\u003EFamily members of at least eight current or former members of Communist Party\\u0026#8217;s Politburo Standing Committee, the country\\u0026#8217;s supreme governing body, hold offshore companies arranged through Panama-based law firm Mossack Fonseca, \\u003Ca href=\\\"https://panamapapers.icij.org/20160403-panama-papers-global-overview.html\\\"\\u003Ethe International Consortium of Investigative Journalists (ICIJ) reported\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe China investigation is part of a leak called \\u0026#8220;the Panama Papers,\\u0026#8221; which reveal the hidden financial dealings of over 100 politicians and public officials around the world. Current or former heads of state in the leak include prime ministers of Iceland and Pakistan, the president of Ukraine, and the king of Saudi Arabia. A suspected $2 billion money laundering ring has links to Russia\\u0026#8217;s president Vladimir Putin, \\u003Ca href=\\\"http://www.theguardian.com/news/2016/apr/03/panama-papers-money-hidden-offshore\\\"\\u003Ethe Guardian reported\\u003C/a\\u003E as part of the leak.\\u003C/p\\u003E\\n\\u003Cp\\u003EHundreds of journalists from 78 countries spent a year analyzing and verifying nearly 40 years of records, and published the first installment of their investigation on April 3. The records were given by an anonymous source to German newspaper Süddeutsche Zeitung, and were shared by ICIJ.\\u003C/p\\u003E\\n\\u003Cp\\u003EIt is not illegal to own an offshore company, but these entities are often used for illegal activities, including money laundering and tax evasion.\\u003C/p\\u003E\\n\\u003Cp\\u003ESo far ICIJ has revealed \\u003Ca href=\\\"https://panamapapers.icij.org/the_power_players/\\\"\\u003Efour names\\u003C/a\\u003E of Chinese officials. They include president Xi Jinping, former premier Li Peng, the former fourth-ranking Politburo Standing Committee member Jia Qinglin, who have links to offshore companies through their relatives. The fourth, imprisoned former Chongqing city Party chief Bo Xilai, is involved via a business partner of his wife.\\u003C/p\\u003E\\n\\u003Cul\\u003E\\n\\u003Cli\\u003E\\u003Cstrong\\u003E\\u003Cstrong\\u003EPresident Xi Jinping:  \\u003C/strong\\u003E\\u003C/strong\\u003E\\u003Ca href=\\\"https://panamapapers.icij.org/the_power_players/?lang=en#69\\\"\\u003EDeng Jiagui\\u003C/a\\u003E, the brother-in-law of Xi Jinping, became the sole director and shareholder of two British Virgin Islands-based shell companies in September 2009, when Xi was serving as one member of the nine-man Politburo Standing Committee. By the time Xi was named the Party chief in 2012 and China\\u0026#8217;s president in 2013, Deng’s two companies were dormant, the leak shows. A \\u003Ca href=\\\"http://www.bloomberg.com/news/articles/2012-06-29/xi-jinping-millionaire-relations-reveal-fortunes-of-elite\\\"\\u003E2012 Bloomberg report\\u003C/a\\u003E found Deng and his wife Qi Qiaoqiao, Xi\\u0026#8217;s older sister, owned hundreds of millions of dollars in real estate, shares, and other assets, although it did not mention off shore companies.\\u003C/li\\u003E\\n\\u003Cli\\u003E\\u003Cstrong\\u003EFormer premier Li Peng\\u003C/strong\\u003E: Li Peng served as the Chinese premier from 1987 to 1998. During his tenure his second child and only daughter, \\u003Ca href=\\\"https://panamapapers.icij.org/the_power_players/?lang=en#53\\\"\\u003ELi Xiaolin\\u003C/a\\u003E, and her husband Liu Zhiyuan, were the beneficial owners of a Lichtenstein foundation that was the sole shareholder of a BVI company, the leak shows. The leak also shows Li Xiaolin is referred as \\u0026#8220;Xiaolin Liu-Li” in her Hong Kong passport and a cover letter, \\u0026#8220;which may have made linking her to Li Peng more difficult.\\u0026#8221; Dubbed China\\u0026#8217;s \\u0026#8220;Power Queen,\\u0026#8221; Li was the vice president of state-owned China Power Investment Corp., and served as a delegate to China\\u0026#8217;s top political advisory body.\\u003C/li\\u003E\\n\\u003Cli\\u003E\\u003Cstrong\\u003EFormer Politburo member Jia Qinglin\\u003C/strong\\u003E: Jia Qinglin was China\\u0026#8217;s fourth-ranking official on the ruling Politburo Standing Committee between 2002 and 2012. In December 2010, his granddaughter \\u003Ca href=\\\"https://panamapapers.icij.org/the_power_players/?lang=en#70\\\"\\u003EJasmine Li\\u003C/a\\u003E, then a teenager studying at Stanford University, became the sole shareholder of Harvest Sun Trading Ltd., a company that was incorporated in the British Virgin Islands in 2009. Harvest Sun was transferred for $1 to Li by Zhang Yuping, the founder of China\\u0026#8217;s leading luxury watch distributor \\u003Ca href=\\\"http://www.hengdeligroup.com/eng/home/home.htm\\\"\\u003EHengdeli\\u003C/a\\u003E. Through Harvest Sun and another BVI company, Li owned two Beijing-registered consulting firms, without disclosing her ownership.\\u003C/li\\u003E\\n\\u003Cli\\u003E\\u003Cstrong\\u003EFormer Chongqing Party chief Bo Xilai: \\u003C/strong\\u003EFrench architect \\u003Ca href=\\\"https://panamapapers.icij.org/the_power_players/?lang=en#76\\\"\\u003EPatrick Henri Devillers\\u003C/a\\u003E was a business partner of Gu Kailai, wife of fallen high-flyer Bo Xilai, the Chongqing party chief from 2007 to 2012. Bo is now serving a life sentence for corruption charges. In September 2000, Devillers helped Bo\\u0026#8217;s wife Gu incorporate a property company in the British Virgin Islands, the leak shows. Devillers held shares in the BVI company on behalf of Gu, and court records show the company was used to secretly \\u003Ca href=\\\"http://qz.com/127141/how-the-chinese-government-could-seize-bo-xilais-villa-on-the-french-riviera/\\\"\\u003Ebuy a $3.2 million villa\\u003C/a\\u003E in southern France, with money from a bribe. Devillers\\u0026#8217; testimony was used in Bo\\u0026#8217;s 2013 corruption trial.\\u003C/li\\u003E\\n\\u003C/ul\\u003E\\n\\u003Cp\\u003EXi initiated a sweeping anti-graft campaign since he took control in November 2012. The corruption crackdown has \\u003Ca href=\\\"http://qz.com/547695/chinas-corruption-crackdown-is-so-vast-top-officials-from-every-single-province-have-been-nabbed/\\\"\\u003Ecovered each province of the nation\\u003C/a\\u003E, with high-ranking officials being targeted including former president\\u0026#8217;s top aide \\u003Ca href=\\\"http://www.scmp.com/news/china/policies-politics/article/1842250/former-chinese-presidential-aide-ling-jihua-expelled\\\"\\u003ELing Jihua\\u003C/a\\u003E, and ex-security czar \\u003Ca href=\\\"http://qz.com/241923/theories-on-zhou-yongkangs-takedown-and-a-brief-history-of-chinese-purges/\\\"\\u003EZhou Yongkang\\u003C/a\\u003E. By going after Zhou, Xi broke an unwritten rule that a former member of the Politburo Standing Committee should not be investigated.\\u003C/p\\u003E\\n\\u003Cp\\u003EThat obviously hasn\\u0026#8217;t stopped the country\\u0026#8217;s most powerful from moving money off shore though secretive companies. \\u003Cspan class=\\\"message_body\\\"\\u003EA \\u003Ca href=\\\"https://www.icij.org/offshore/leaked-records-reveal-offshore-holdings-chinas-elite#\\\"\\u003E2014 ICIJ investigation\\u003C/a\\u003E also revealed that relatives of current or former Chinese leaders were using offshore companies in the British Virgin Islands. Those include Deng Jiagui, Li Xiaolin, and relatives of late paramount leader Deng Xiaoping, former president Hu Jintao, and former premier Wen Jiabao.\\u003Cbr /\\u003E\\n\\u003C/span\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653836\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-04T01:39:51-04:00\",\"category\":\"China's Transition\",\"guid\":\"http://qz.com/preview/653836\",\"dc_creator\":\"Zheping Huang\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2016/04/rtr1v6v5-e1459743837169.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Xi waves as he stands with other members of China\\u0026#039;s new Politburo Standing Committee Jia and He at Great Hall of the People in Beijing\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2016/04/rtr1v6v5-e1459743837169.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653836/chinas-elite-including-xi-jinping-are-linked-to-offshore-deals-that-hid-millions-of-dollars/"], ["published_at", Mon, 04 Apr 2016 05:39:51 UTC +00:00], ["title", "China&#8217;s elite—including Xi Jinping—are linked to offshore deals that hid millions of dollars"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (21.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653775"], ["json", "{\"title\":\"With Saudi visit, Modi oils India\\u0026#8217;s gulf ties to make it rough for Pakistan\",\"link\":\"http://qz.com/653775/with-saudi-visit-modi-oils-indias-gulf-ties-to-make-it-rough-for-pakistan/\",\"description\":\"The Middle East, especially Saudi Arabia, may not be in India\\u0026#8217;s neighborhood but the region plays an outsized role in the country\\u0026#8217;s economic growth as\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653775\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2016/04/l2016040379029.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"India-Saudi Arabia\\\" /\\u003E\\u003Cp\\u003EThe Middle East, especially Saudi Arabia, may not be in India\\u0026#8217;s neighborhood but the region plays an outsized role in the country\\u0026#8217;s economic growth as well as relations with its querulous neighbor Pakistan. Not surprisingly, prime minister Narendra Modi and his government have been serious about cultivating ties with trips to the region. Eight months after a visit to the United Arab Emirates (UAE), Modi once again headed to the region, this time to Saudi Arabia to strengthen Delhi\\u0026#8217;s close relations with the kingdom and loosen the Saudi-Pakistani ties in the process.\\u003C/p\\u003E\\n\\u003Cp\\u003EIndia is a major trade partner in the region, and Modi aims to position India globally so as to isolate Pakistan\\u0026#8217;s military-industrial complex and its policy of using terrorism as an instrument of state policy. The Saudis hope to leverage Indian expertise in IT and services to modernise and diversify a single-source economy dependent on oil.\\u003C/p\\u003E\\n\\u003Cp\\u003EIndia\\u0026#8217;s ties with Saudi Arabia have grown over the last two decades based on burgeoning energy ties and the Indian diaspora—the largest group of foreign workers in the Saudi kingdom. Modi has already met King Salman of Saudi Arabia a few times, and Saudi help was critical in the evacuation of Indian nationals from the Yemeni war zone. The 2012 deportation of Sayed Zabiuddin, also known as Abu Jundal, a suspect in the 2008 Mumbai terrorist attacks, signaled a sea change in Saudi Arabia\\u0026#8217;s counterterrorism priorities.\\u003C/p\\u003E\\n\\u003Cp\\u003ESaudi Arabia is cautious in balancing ties between Pakistan and India. Ahead of Modi\\u0026#8217;s visit, Saudi foreign minister Adel al-Jubeir tried to alleviate concerns in Pakistan about budding Indo-Saudi ties and insisted that Saudi Arabia\\u0026#8217;s \\u0026#8220;relations with Pakistan do not come at the expense of [its] relations with India.\\u0026#8221; Adel al-Jubeir and Mohammad bin Salman, deputy crown prince and defense minister, visited Pakistan in January despite growing anger at Islamabad\\u0026#8217;s refusal to commit troops in Yemen and join the Saudi-led \\u0026#8220;coalition against terrorism\\u0026#8221; of 34 Islamic nations.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe once close Saudi-Pakistani relationship, with the Saudis even bankrolling the Pakistani nuclear programme, has hit a troubled patch.\\u003C/p\\u003E\\n\\u003Cp\\u003EPakistan was the target during Modi\\u0026#8217;s 2015 visit to the UAE, the first by an Indian prime minister to the country in 34 years. A joint statement issued by Modi and UAE\\u0026#8217;s crown prince Mohamed Bin Zayed Al Nahyan managed to redefine the contours of a relationship that had long been bereft of political heft. Both sides denounced terrorism in \\u0026#8220;all forms and manifestations, wherever committed and by whomever, calling on all states to reject and abandon the use of terrorism against other countries, dismantle terrorism infrastructures where they exist, and bring perpetrators of terrorism to justice.\\u0026#8221; The UAE is among the countries closest to Pakistan, and the message, endorsing India\\u0026#8217;s concerns on terrorism and underscoring the challenges facing gulf kingdoms amid a widening sectarian divide, was a diplomatic triumph for Modi, demonstrating foresight on changing strategic realities in the Middle East.\\u003C/p\\u003E\\n\\u003Cp\\u003EFor Indian strategists, any ally that can act as a counterweight to Pakistan in the Islamic world is useful. Saudi Arabia does the same with Iran, the two nations long competing for power and influence in the Gulf. As the regional balance of power between the two threatens to unravel in Iran\\u0026#8217;s favour, India has repeatedly emphasized a desire for stabilisation in the region\\u0026#8217;s extant balance of power.\\u003C/p\\u003E\\n\\u003Cfigure id=\\\"image-653779\\\" class=\\\"inline-image  alignnone zoomable size-medium\\\"\\u003E\\u003Cimg src=\\\"https://qzprod.files.wordpress.com/2016/04/tradepartners-700px.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=640\\\" data-retina=\\\"https://qzprod.files.wordpress.com/2016/04/tradepartners-700px.jpg?quality=80\\u0026strip=all\\u0026w=700\\\" alt=\\\"\\\" title=\\\"Jockeying: India is a valued trade partner considered it ranks ninth in GDP worldwide, followed by Saudi Arabia at 19th; Iran, 29th, UAE, 31rd; and Pakistan, 43rd (Data: CIA World Factbook on exports and imports)\\\"/\\u003E\\u003Cfigcaption class=\\\"inline-image-caption\\\"\\u003E\\u003Ci class=\\\"icon-camera\\\"\\u003E\\u003C/i\\u003EJockeying: India is a valued trade partner considered it ranks ninth in GDP worldwide, followed by Saudi Arabia at 19th; Iran, 29th, UAE, 31rd; and Pakistan, 43rd (Data: CIA World Factbook on exports and imports)\\u003C/figcaption\\u003E\\u003C/figure\\u003E\\n\\u003Cp\\u003ENew Delhi had long tried to cultivate Tehran, but efforts stumbled as the Islamic Republic adopted an increasingly aggressive anti-western posture. India had hoped Saudi Arabia might fill that gap as Iranian nuclear ambitions helped draw New Delhi and Riyadh closer together. Riyadh agreed to double oil exports to India, helping New Delhi reduce its reliance on Iran. Today, Saudi Arabia is the largest supplier of crude oil to India and India\\u0026#8217;s fourth largest trading partner. At a time when Riyadh has been losing its market share in countries such as China and the US, it supplanted Iraq as the top supplier of crude oil to India. The huge Indian diaspora in the country, nearly three million, makes India the largest recipient of foreign remittances from the kingdom at an estimated $11 billion. Pakistan, Bangladesh, and Indonesia each send about 1.5 million foreign workers to Saudi Arabia.\\u003C/p\\u003E\\n\\u003Cp\\u003EIndian IT companies are building capacity in Saudi Arabia, including an all-women business process operations center run by TCS as one example.\\u003C/p\\u003E\\n\\u003Cp\\u003EIndia\\u0026#8217;s balancing involves developing closer ties with other key regional players, enhancing engagement on more substantive terms.\\u003C/p\\u003E\\n\\u003Cp\\u003EWith the US opening to Iran, a new phase begins in Indo-Iranian ties. Easing of western sanctions on Iran opens the country for a more normal relationship with India, including more energy trade and greater participation of the Indian corporate sector. India has also approved a provision of $150 million to Iran for the development of the vital port of Chabahar, allowing India to compete with China\\u0026#8217;s development of Gwadar port in Pakistan and have an opening to Central Asia. And, no top Indian leader had visited Israel until president Pranab Mukherjee\\u0026#8217;s visit in 2015—that despite 24 years of diplomatic ties and working closely on defense, counterterrorism, agriculture and energy-related issues. Previous Indian governments were reticent in acknowledging partnership with Israel, largely for fear of offending domestic Muslim sentiments.\\u003C/p\\u003E\\n\\u003Cp\\u003EModi\\u0026#8217;s visit to Saudi Arabia underscores India\\u0026#8217;s stakes in a region with multiple fault lines and its preference for a stable balance of power.\\u003C/p\\u003E\\n\\u003Cp\\u003EThere are calls in India for Modi to take a more active role encouraging bridges between Riyadh and Tehran, but New Delhi is probably not ready to don the mantle of a regional reconciler, especially when other major powers are taking a cautious approach. The Obama administration, no longer dependent on Saudi oil, is openly critical of Saudi policies and, after opening to Iran, signals that the US retains other options. As Washington prunes its role as a guarantor of regional security, China is trying to raise its regional profile. President Xi Jinping visited Saudi Arabia, Egypt and Iran earlier this year to promote its One Belt, One Road Initiative and establish credentials as a reliable regional economic and political partner even as it continues to avoid defense security responsibilities.\\u003C/p\\u003E\\n\\u003Cp\\u003EInvestments in the region carry high risk. Political transitions that have been uneasy since the Arab Spring and ongoing conflict increasingly tests the resolve of the international community.\\u003C/p\\u003E\\n\\u003Cp\\u003EA hallmark of Modi\\u0026#8217;s foreign policy has been a self-confident assertion of Indian interests, marking a distinct break from unnecessary and counterproductive diffidence of the past. The prime minister is keen to see that Pakistan\\u0026#8217;s close allies apply pressure on Pakistan—and after limited success with the UAE, he will press the Saudis. While it\\u0026#8217;s unlikely that the Saudis will break with Pakistan, a declaration of opposition to state-sponsored terrorism would be considered a major step.\\u003C/p\\u003E\\n\\u003Cp\\u003ETo win such support, Modi likely won\\u0026#8217;t be vocal about Saudi support for Wahhabism, a fundamentalist branch of Islam blamed by many in the international community for contributing to a spread of global terrorism.\\u003C/p\\u003E\\n\\u003Cp\\u003EHow Modi positions India vis-à-vis other major players in the Middle East at this time of great tumult in the region is the real test of Indian diplomacy.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cem\\u003EThis post originally appeared on \\u003Ca href=\\\"http://yaleglobal.yale.edu/content/modi%E2%80%99s-middle-east-outreach\\\" target=\\\"_blank\\\"\\u003EYaleGlobal\\u003C/a\\u003E. We welcome your comments at \\u003Ca href=\\\"mailto:ideas.india@qz.com\\\" target=\\\"_blank\\\"\\u003Eideas.india@qz.com\\u003C/a\\u003E.\\u003C/em\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653775\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-04T01:39:43-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/653775\",\"dc_creator\":\"Harsh V. Pant\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2016/04/l2016040379029.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Prime minister Narendra Modi at the signing of agreements between India and the kingdom of Saudi Arabia, in Riyadh, Saudi Arabia.\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2016/04/l2016040379029.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653775/with-saudi-visit-modi-oils-indias-gulf-ties-to-make-it-rough-for-pakistan/"], ["published_at", Mon, 04 Apr 2016 05:39:43 UTC +00:00], ["title", "With Saudi visit, Modi oils India&#8217;s gulf ties to make it rough for Pakistan"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653853"], ["json", "{\"title\":\"South Africa\\u0026#8217;s president Zuma is hanging on while the ANC decides his future\",\"link\":\"http://qz.com/653853/south-africas-president-zuma-is-hanging-on-while-the-anc-decides-his-future/\",\"description\":\"South African President Jacob Zuma apologizzed to his country on national television on Friday just before eight in the evening after a dramatic 36 hours\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653853\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"393\\\" src=\\\"https://qzprod.files.wordpress.com/2015/06/rtx1avew.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"It\\u0026#039;s all good. Really.\\\" /\\u003E\\u003Cp\\u003ESouth African President Jacob Zuma \\u003Ca\\u003Eapologizzed\\u003C/a\\u003E to his country on national television on Friday just before eight in the evening after a dramatic 36 hours that ended with him hanging onto power by a thread.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe day before his televised apology the country’s highest court, the Constitutional Court, \\u003Ca href=\\\"https://theconversation.com/zuma-court-ruling-south-africans-witness-a-massive-day-for-democracy-57070\\\"\\u003Eruled\\u003C/a\\u003E that Zuma had failed to “uphold, defend, respect” the Constitution. The court found that he had done this by refusing to accept that he should pay back a portion of the public money that was spent on security upgrades to his private homestead, Nkandla.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe judgment was widely, and rightly, celebrated as a victory for constitutional democracy and the Public Protector—South Africa’s ombud, established by the Constitution that was signed into law by then-President Nelson Mandela, 20 years ago.\\u003C/p\\u003E\\n\\u003Ch2\\u003EFilibustering and obfuscation\\u003C/h2\\u003E\\n\\u003Cp\\u003EThe Public Protector, Thuli Madonsela’s \\u003Ca href=\\\"http://www.news24.com/SouthAfrica/News/FULL-TEXT-Statement-by-Public-Protector-on-Nkandla-Report-20140319\\\"\\u003Ereport\\u003C/a\\u003E, “Secure in Comfort”, was published in March 2014. For the best part of two years Zuma resisted accepting the “remedial action”. The Constitutional Court this week ruled that this remedial action was binding on him. He also used his party’s majority in the National Assembly to further filibuster and obfuscate – earning the national parliament a similarly sharp rebuke from the Constitutional Court.\\u003C/p\\u003E\\n\\u003Cspan class=\\\"pull-quote\\\"\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003Cspan\\u003EANC\\u0026#8217;s secretary general stated, several times, that the party does not “pivot” around any one leader.\\u003C/span\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003C/span\\u003E\\n\\u003Cp\\u003EIn another, earlier case involving a challenge to the Public Protector’s powers by the South African Broadcasting Corporation’s chief 0perating officer Hlaudi Motsoneng, the Western Cape High Court ruled that Madonsela’s powers were not binding like a court order. But, the court found, any “remedial action” that she ordered should be taken by the government unless there was a rational reason not to.\\u003C/p\\u003E\\n\\u003Cp\\u003EWhen the decision was appealed, the Supreme Court of Appeal later \\u003Ca href=\\\"http://www.bdlive.co.za/national/2015/10/09/court-judgment-affirms-reach-of-madonselas-powers\\\"\\u003Eadjusted\\u003C/a\\u003E this legal test to the one that the Constitutional Court confirmed on Thursday—namely that the power of the Public Protector to “take remedial action” is binding unless successfully challenged by way of judicial review.\\u003C/p\\u003E\\n\\u003Cp\\u003EZuma and his lawyers are adept at using the courts as a delaying tactic. The challenge to the decision to drop corruption charges against him shortly before he came to power in 2009 has dragged along at a snail’s pace thanks to his various procedural challenges. A decision of the North Gauteng High Court is now pending, the matter having finally been heard in March 2016.\\u003C/p\\u003E\\n\\u003Cp\\u003EIn his television address Zuma took refuge behind the legal advice that he claimed had informed his original approach, citing the Western Cape High Court decision. This can only be described as an outrageously brazen and disingenuous ex post facto re-framing of the history of the matter.\\u003C/p\\u003E\\n\\u003Cp\\u003EIt will not fool many.\\u003C/p\\u003E\\n\\u003Ch2\\u003EANC’s containment strategy\\u003C/h2\\u003E\\n\\u003Cp\\u003EZuma is fighting desperately for his political life, staggering from one scandal or misjudgement to another. An hour after his live broadcast, Gwede Mantashe, the secretary-general of Zuma’s own party, the African National Congress, held his own press conference. He stated, several times, that the party does not “pivot” around any one leader. Mantashe said that the ANC welcomed the fact that Zuma had “humbled” himself before the nation.\\u003C/p\\u003E\\n\\u003Cp\\u003EAs the ANC’s chief “traffic warden” and kingmaker, Mantashe is now the man who holds the key to Zuma’s future.\\u003C/p\\u003E\\n\\u003Cp\\u003ETo the uninitiated it may have looked like Mantashe and the ANC were pulling up the drawbridge in defence of Zuma, as he counter-attacked against opposition calls for Zuma to be impeached or removed by his own party. He told the media: \\u0026#8220;We will not play to the gallery.\\u0026#8221;\\u003C/p\\u003E\\n\\u003Cp\\u003EBut to more seasoned political watchers it was clear that Mantashe’s strategy of containing Zuma is gathering momentum and gaining traction. Tellingly, Mantashe announced that the ANC will shortly be holding an “extended” meeting of its national working committee.\\u003C/p\\u003E\\n\\u003Cp\\u003EThis is a powerful sub-committee of the ruling party’s National Executive Committee—which is the only body that can “recall” Zuma, \\u003Ca href=\\\"http://mg.co.za/article/2008-09-20-anc-recalls-mbeki\\\"\\u003Eas it did\\u003C/a\\u003E in the case of former President Thabo Mbeki in September 2008.\\u003C/p\\u003E\\n\\u003Cp\\u003EAn “extended” national working committee means that any other member of the national executive committee may attend. Who turns up may matter a great deal to Zuma’s future. He may still enjoy a majority of support on the national executive committee that was elected when he was re-elected as president of the ANC at its last national conference in December 2012. But that support is now on the wane. More recently the moderates and social democratic traditionalists in the ANC leadership have begun to find their voice in opposition to Zuma’s destabilizing rule.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe national working committee is also due to meet with the ANC’s parliamentary caucus. Until now they have used their majority of 63% of the seats in the National Assembly to vote down several motions of no confidence brought by the chief opposition party, the Democratic Alliance.\\u003C/p\\u003E\\n\\u003Cp\\u003EParliament is in recess, so the decision to recall its parliamentary caucus suggests that events are moving fast within the ANC. This raises the question: if there is no crisis, then why all these meetings?\\u003C/p\\u003E\\n\\u003Cp\\u003EFor the time being at least, Zuma is not ready to relinquish power. With the ruling on the lawfulness of the decision to drop the corruption charges against him looming he still has too much to lose by giving up the Presidency.\\u003C/p\\u003E\\n\\u003Cp\\u003EBut Zuma is in the middle of a long and difficult week and perhaps sooner rather than later he may have to face the inevitable.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cimg src=\\\"https://counter.theconversation.edu.au/content/57180/count.gif\\\" alt=\\\"The Conversation\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\\u003Ca href=\\\"http://theconversation.com/profiles/richard-calland-182127\\\"\\u003ERichard Calland\\u003C/a\\u003E, Associate Professor in Public Law, \\u003Cem\\u003E\\u003Ca href=\\\"http://theconversation.com/institutions/university-of-cape-town\\\"\\u003EUniversity of Cape Town\\u003C/a\\u003E\\u003C/em\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003EThis article was originally published on \\u003Ca href=\\\"http://theconversation.com\\\"\\u003EThe Conversation\\u003C/a\\u003E. Read the \\u003Ca href=\\\"https://theconversation.com/dramatic-night-in-south-africa-leaves-president-hanging-on-by-a-thread-57180\\\"\\u003Eoriginal article\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cem\\u003E\\u003Ca href=\\\"http://bit.ly/1Iv0LIx\\\" target=\\\"_blank\\\"\\u003ESign up for the Quartz Africa Weekly Brief\\u003C/a\\u003E \\u0026mdash; the most important and interesting news from across the continent, in your inbox.\\u003C/em\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653853\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-04T01:27:54-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/653853\",\"dc_creator\":\"Richard Calland, University of Cape Town\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/06/rtx1avew.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"South African President Jacob Zuma attends the summit of the Southern African Development Community\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/06/rtx1avew.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653853/south-africas-president-zuma-is-hanging-on-while-the-anc-decides-his-future/"], ["published_at", Mon, 04 Apr 2016 05:27:54 UTC +00:00], ["title", "South Africa&#8217;s president Zuma is hanging on while the ANC decides his future"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653837"], ["json", "{\"title\":\"India needs freedom from its oversensitive people\",\"link\":\"http://qz.com/653837/india-needs-freedom-from-its-oversensitive-people/\",\"description\":\"Have you been suitably offended by a Yatra.com advertisement yet? Congratulations, then, for helping a travel website with social media publicity. I must be in\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653837\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2016/04/kanhaiya-kumar.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"india-advertisement-yatra-kanhaiya\\\" /\\u003E\\u003Cp\\u003EHave you been suitably offended by a Yatra.com advertisement yet? Congratulations, then, for helping a travel website with social media publicity. I must be in a small minority that failed to be offended by the commercial.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe 1-minute, 15-second video shows a lookalike of Kanhaiya Kumar, Jawaharlal Nehru University (JNU) student leader,  breaking into \\u003Cem\\u003Eazadi\\u003C/em\\u003E (freedom) slogans on being denied a window seat by an airline. \\u0026#8220;We want the freedom to get the window seat,\\u0026#8221; the doppleganger says in the same tone and rhythm used by Kumar in his now \\u003Ca href=\\\"https://www.youtube.com/watch?v=6NJbxEgf3Uo\\\" target=\\\"_blank\\\"\\u003Efamously dubstepped\\u003C/a\\u003E speech.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Ciframe class='youtube-player' type='text/html' width='640' height='390' src='http://www.youtube.com/embed/jVAfef6JxgM?version=3\\u0026#038;rel=1\\u0026#038;fs=1\\u0026#038;autohide=2\\u0026#038;showsearch=0\\u0026#038;showinfo=1\\u0026#038;iv_load_policy=1\\u0026#038;wmode=transparent' allowfullscreen='true' style='border:0;'\\u003E\\u003C/iframe\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003ECritics \\u003Ca href=\\\"http://www.dailyo.in/politics/kanhaiya-spoof-ad-air-travel-indian-middle-classes-azaadi-yatracom-jnu-online-booking-reservation-digital-india/story/1/9859.html\\\"\\u003Eclaim the advertisement\\u003C/a\\u003E appropriates the \\u003Cem\\u003Eazadi\\u003C/em\\u003E slogan, commericalises and trivializes it.\\u003C/p\\u003E\\n\\u003Cp\\u003EI don’t see how the ad undermines Kumar\\u0026#8217;s message or the spirit of the \\u003Cem\\u003Eazadi\\u003C/em\\u003E message that came through the noise of nationalism in recent weeks. If anything, the ad only increases the recall value of both Kumar and the \\u003Cem\\u003Eazadi\\u003C/em\\u003E slogan.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe critics would have been justified if the commercial took political sides on \\u003Ca href=\\\"http://qz.com/617389/in-modis-india-there-are-only-two-sets-of-people-nationals-and-anti-nationals/\\\" target=\\\"_blank\\\"\\u003Ethe nationalism debate\\u003C/a\\u003E, or ridiculed the idea of \\u003Cem\\u003Eazadi\\u003C/em\\u003E from things such as poverty and feudalism, as Kumar\\u0026#8217;s \\u003Ca href=\\\"https://www.youtube.com/watch?v=U-6DidI1zsY\\\" target=\\\"_blank\\\"\\u003Eoriginal speech did\\u003C/a\\u003E. No, the ad does none of that.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe use of Kumar and \\u003Cem\\u003Eazadi\\u003C/em\\u003E by the Yatra web check-in app video isn’t contentious in the same way as a recent Havells fan ad that took sides on the reservations debate—clearly siding with those opposed to affirmative action against the lower castes. Following social media anger, Havells India withdrew the ad.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Ciframe class='youtube-player' type='text/html' width='640' height='390' src='http://www.youtube.com/embed/A1TrevAyvvc?version=3\\u0026#038;rel=1\\u0026#038;fs=1\\u0026#038;autohide=2\\u0026#038;showsearch=0\\u0026#038;showinfo=1\\u0026#038;iv_load_policy=1\\u0026#038;wmode=transparent' allowfullscreen='true' style='border:0;'\\u003E\\u003C/iframe\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003EAs was inevitable, Kumar and the \\u003Cem\\u003Eazadi\\u003C/em\\u003E slogan were becoming old news, part of a news cycle that’s over for now. The JNU PhD scholar hasn’t helped his cause either, getting trapped in the pointless \\u003Ca href=\\\"http://timesofindia.indiatimes.com/india/Kanhaiya-Kumar-under-fire-for-remarks-on-1984-anti-Sikh-riots/articleshow/51604468.cms\\\" target=\\\"_blank\\\"\\u003E1984 anti-Sikh riots versus the 2002 Gujarat massacres\\u003C/a\\u003E debate. He should now be grateful to Yatra.com for helping his currency a bit more.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe naysayers seem to have a problem with the very use of political events in advertising, though that is nothing new. After all, Amul has done it almost every week for decades. This opposition arises partly from an obsolete aversion to commerce: how dare a company do this?\\u003C/p\\u003E\\n\\u003Cp\\u003EBut companies and popular culture will do what they must. Like politicians and media, they will latch on to whatever captures public imagination. It is up to you whether to turn the \\u003Cem\\u003Eazadi\\u003C/em\\u003E slogan into another holy cow—fighting bitterly to \\u0026#8220;protect\\u0026#8221; it—or whether you make common cause with popular culture and make \\u003Cem\\u003Eazadi \\u003C/em\\u003Emainstream.\\u003C/p\\u003E\\n\\u003Cp\\u003EVery soon, the Akhil Bharatiya Vidyarthi Parishad, which was happy to see Kumar in jail, too will appropriate the slogan. What will our whining leftists do then? Maybe some more hand-wringing about appropriation.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe \\u003Cem\\u003Eazadi\\u003C/em\\u003E motto is a powerful theme for our times. We need it more and more. And that\\u0026#8217;s not going to happen if we fight silly over its use in popular culture. Turf wars over who can use \\u003Cem\\u003Eazadi\\u003C/em\\u003E and when, will only make the word go \\u0026#8220;secularism\\u0026#8221; way, drained of meaning or popular resonance.\\u003C/p\\u003E\\n\\u003Cp\\u003ELet us seek \\u003Cem\\u003Eazadi\\u003C/em\\u003E from everything that’s wrong—including our tendency to turn everything into a holy cow.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cem\\u003EWe welcome your comments at \\u003Ca href=\\\"http://ideas.india@qz.com/\\\" target=\\\"_blank\\\"\\u003Eideas.india@qz.com\\u003C/a\\u003E.\\u003C/em\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653837\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-04T01:00:56-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/653837\",\"dc_creator\":\"Shivam Vij\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2016/04/kanhaiya-kumar.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Kanhaiya Kumar\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2016/04/kanhaiya-kumar.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653837/india-needs-freedom-from-its-oversensitive-people/"], ["published_at", Mon, 04 Apr 2016 05:00:56 UTC +00:00], ["title", "India needs freedom from its oversensitive people"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653827"], ["json", "{\"title\":\"China is pretending that Hong Kong’s \\u0026#8220;Best Film\\u0026#8221; award winner doesn’t exist\",\"link\":\"http://qz.com/653827/china-is-pretending-that-hong-kongs-best-film-award-winner-doesnt-exist/\",\"description\":\"If it had been up to the Chinese government, the 35th Hong Kong Film Awards, held yesterday (April 3), would have skipped the \\u0026#8220;Best Picture\\u0026#8221;\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653827\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2016/02/04_e3808aself-immolatore3808baction-still-director_chow-kwun-wai-e1455673970308.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"Dystopian vision.\\\" /\\u003E\\u003Cp\\u003EIf it had been up to the Chinese government, the \\u003Ca href=\\\"http://www.hkfaa.com/winnerlist.html\\\"\\u003E35th Hong Kong Film Awards\\u003C/a\\u003E, held yesterday (April 3), would have skipped the \\u0026#8220;Best Picture\\u0026#8221; category.\\u003C/p\\u003E\\n\\u003Cp\\u003EThis year\\u0026#8217;s award committee \\u003Ca href=\\\"http://www.theguardian.com/world/2016/apr/04/hong-kong-film-awards-ten-years-wins-top-prize-amid-china-anger\\\"\\u003Echose \\u003Cem\\u003ETen Years\\u003C/em\\u003E\\u003C/a\\u003E as the category\\u0026#8217;s winner. The film consists of five vignettes that paint a bleak picture of Hong Kong in a decade\\u0026#8217;s time, as the Communist Party of China continues to assert its influence on the city. Mandarin replaces Cantonese, school children raid local shops Cultural Revolution-style, and young adults desperate to restore democracy resort to self-immolation.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe film was a hit in the Fragrant Harbor. It generated HK$6 million ($773,704) in box office revenues on its opening weekend—and \\u003Ca href=\\\"http://qz.com/615831/the-most-successful-movie-made-in-hong-kong-in-years-has-been-pulled-from-theaters/\\\"\\u003Emore per-screen\\u003C/a\\u003E than \\u003Cem\\u003EStar Wars: The Force Awakens\\u003C/em\\u003E in at least one theater.\\u003C/p\\u003E\\n\\u003Cp\\u003EChinese media outlets have muted coverage of the award and the ceremony. What was once a major event in the greater Chinese film industry is now a topic to dodge\\u003C/p\\u003E\\n\\u003Cp\\u003EIn a special section covering the awards, online media outlet Netease Entertainment \\u003Ca href=\\\"http://ent.163.com/special/35hkfa/\\\"\\u003Elists the winners\\u003C/a\\u003E (link in Chinese) in the competition\\u0026#8217;s major categories. But the coverage begins with \\u0026#8220;Best Director.\\u0026#8221; The category for Best Film, where \\u003Cem\\u003ETen Years\\u003C/em\\u003E would go, is conspicuously absent. Readers can learn about the detective thriller \\u003Cem\\u003EPort of Call\\u003C/em\\u003E and its seven awards, or read interviews with Best Actress winner Jessie Li, but there\\u0026#8217;s no mention of \\u003Cem\\u003ETen Years\\u003C/em\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EMeanwhile the Global Times, an English-language state media outlet, \\u003Ca href=\\\"http://www.globaltimes.cn/content/976989.shtml\\\"\\u003Epublished a piece yesterday\\u003C/a\\u003E describing the event as a drab affair:\\u003C/p\\u003E\\n\\u003Cblockquote\\u003E\\n\\u003Cp class=\\\"p1\\\"\\u003E\\u003Cspan class=\\\"s1\\\"\\u003EThe inside of the center was fairly quiet. Though over-size posters of stars set to attend the film ceremony had been set up, they were in a corner where people would only see them if they happened to walk by. The stars in their fine suits were smiling or making cool poses, but seemed lonely due to the lack of attention.\\u003C/span\\u003E\\u003C/p\\u003E\\n\\u003C/blockquote\\u003E\\n\\u003Cp class=\\\"p1\\\"\\u003EThe piece didn\\u0026#8217;t mention any of the nominated films, including \\u003Cem\\u003ETen Years\\u003C/em\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe blackout on coverage of the film\\u0026#8217;s victory is not surprising. In February, state broadcaster CCTV announced that it \\u003Ca href=\\\"http://www.hollywoodreporter.com/news/china-hong-kong-film-awards-868110\\\"\\u003Ewould not broadcast\\u003C/a\\u003E the event on television. Online media giant Tencent also told the Hong Kong Film Award Association it would not stream the event on the web. There\\u0026#8217;s no entry for the film on Douban, China\\u0026#8217;s answer to the Internet Movie Database (IMDb).\\u003C/p\\u003E\\n\\u003Cp\\u003EIn the lead-up to yesterday\\u0026#8217;s event, publishers wrote editorials arguing the ceremony has lost its relevance. A February piece in the People\\u0026#8217;s Daily, a state mouthpiece paper, called the institution \\u003Ca href=\\\"http://media.people.com.cn/BIG5/n1/2016/0203/c40606-28106189.html\\\"\\u003Ean \\u0026#8220;old folks\\u0026#8217; gathering,\\u0026#8221;\\u003C/a\\u003E noting how many of the nominees are around the age of 50.\\u003C/p\\u003E\\n\\u003Cp class=\\\"p1\\\"\\u003EDue to its subject matter, it\\u0026#8217;s extremely unlikely that \\u003Cem\\u003ETen Years\\u003C/em\\u003E will see official release China. Its commercial fate in Hong Kong is also uncertain. It was pulled from theaters two months after its release—possibly due to the film running its course, or possibly due to \\u003Ca href=\\\"http://qz.com/615831/the-most-successful-movie-made-in-hong-kong-in-years-has-been-pulled-from-theaters/\\\"\\u003Eself-censorship from theaters\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp class=\\\"p1\\\"\\u003EBut grassroots interest in the film remains strong. On Friday, civic organizations launched over a dozen city-wide screenings at public venues throughout Hong Kong, each of which drew in \\u003Ca href=\\\"http://qz.com/652535/a-movie-about-the-dangers-of-communist-control-made-hong-kong-residents-come-out-in-droves/\\\"\\u003Ehundreds of viewers\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp class=\\\"p1\\\"\\u003EWith the award, the film\\u0026#8217;s artistic merits will no doubt be further debated in the months ahead. Its political value, however, has already been proven.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653827\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-04T00:34:25-04:00\",\"category\":\"The Future of Hong Kong\",\"guid\":\"http://qz.com/preview/653827\",\"dc_creator\":\"Josh Horwitz\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2016/02/04_e3808aself-immolatore3808baction-still-director_chow-kwun-wai-e1455673970308.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"04_《Self-Immolator》Action Still ( Director_Chow Kwun-wai)\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2016/02/04_e3808aself-immolatore3808baction-still-director_chow-kwun-wai-e1455673970308.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653827/china-is-pretending-that-hong-kongs-best-film-award-winner-doesnt-exist/"], ["published_at", Mon, 04 Apr 2016 04:34:25 UTC +00:00], ["title", "China is pretending that Hong Kong’s &#8220;Best Film&#8221; award winner doesn’t exist"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (27.0ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/653718"], ["json", "{\"title\":\"Here are Assam\\u0026#8217;s political suitors as the state goes to poll today\",\"link\":\"http://qz.com/653718/here-are-assams-political-suitors-as-the-state-goes-to-poll-today/\",\"description\":\"For Prime Minister Narendra Modi’s Bharatiya Janata Party (BJP), it is a make-or-break election in Assam. Of the four states and one union territory going\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653718\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2016/04/ap_239731471852.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 size-medium_10 wp-post-image\\\" alt=\\\"India-Elephants\\\" /\\u003E\\u003Cp\\u003EFor Prime Minister Narendra Modi’s Bharatiya Janata Party (BJP), it is a make-or-break election in Assam. Of the four states and one union territory going to the polls in April and May, Assam is the only one where the BJP—having suffered defeats in Delhi and Bihar—stands a decent chance of snatching power.\\u003C/p\\u003E\\n\\u003Cp\\u003EExcept in the 2011 elections, when the Congress won power on its own, every government in Assam has been a coalition. This time, too, the BJP is fighting for 88 of the 126 seats in the state legislature, and has given its coalition partners the remainder. The April state elections are not likely to end tensions between ethnic Hindu Assamese and Assamese Bengalis, both Hindu and Muslim, and between the Assamese and the perceived hordes of illegal Muslim immigrants from neighbouring Bangladesh.\\u003C/p\\u003E\\n\\u003Cp\\u003EIf the BJP wins, it will be the first time that a government will be formed in the state without the support of Muslim parties.\\u003C/p\\u003E\\n\\u003Cp\\u003EAs Assam votes today (April 4) in the first of the two-phase elections, here’s a look at the key players in the state.\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003EThe ruling Congress Party: ripe for toppling?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003EThe only thing going for Tarun Gogoi, who turned 80 on All Fools Day, is his longevity in electoral politics—six terms as a member of the Lok Sabha, stretching back to 1971, and three terms as chief minister of a state that saw the most brutal ethnic cleansing in India’s history.\\u003C/p\\u003E\\n\\u003Cp\\u003EGogoi shrugs off allegations of corruption and inefficiency, but the state’s comatose economy is testament to the do-nothingness of prolonged incumbency. The state’s GDP grew by 5.87% in 2013-14. About a third of the population lives below the poverty line. About 86% of Assamese live in the countryside, but the share of agriculture in the economy has fallen steadily from about 55% in 1950 to about 17% last year. The share of industry has also been declining.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe 2011 Census showed that Assam was one of India’s worst-off states in terms of health and sanitation. Only 54.8% of households in Assam had access to drinking water within their premises, and only 10.5% had tap water. Assam is also one of India’s eight poorest states; a government document notes that it is “a unique example of poverty amidst plenty”.\\u003C/p\\u003E\\n\\u003Cp\\u003EThere is little doubt that after decades of Congress rule Assam is a failing state.\\u003C/p\\u003E\\n\\u003Cp\\u003EDespite this dismal track record, nobody I spoke with is willing to predict defeat for Gogoi or the Congress. The chief minister maintains his hold on his Titabar bailiwick; his 35-year-old son Gaurav, a political rookie, easily won his father’s old parliamentary constituency in 2014.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe anointing of the son as the heir apparent triggered the exit of Gogoi’s closest lieutenant, health and education minister and fund-raiser, Himanta Biswa Sarma. Sarma, who joined the BJP in August last year with nine other defectors, was quickly made party campaign chief.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe 47-year-old ex-lawyer started his career as a schoolboy courier for All Assam Students Union (AASU) leaders during the 1979-85 anti-foreigner agitation, then moved to the Congress party in 1991.\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003EWill the BJP finally rule the Brahmaputra Valley?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003ESarbananda Sonowal, youth and sports minister in Modi’s cabinet, is the BJP’s chief ministerial candidate. He masterminded a stunning setback for Gogoi in the 2014 Lok Sabha elections with the BJP winning seven of Assam’s 14 lower house seats. The BJP’s “vision document” promises to “(work) closely with central government to achieve complete sealing of the Indo-Bangladesh border in Assam”.\\u003C/p\\u003E\\n\\u003Cp\\u003ESonowal says the border sealing has been made easier by the Land Boundary Agreement signed by Modi and Bangladesh’s prime minister Sheikh Hasina in June last year. The pact led to the swapping of 162 pockets of land totalling just over 24,000 acres on each other’s territory, ending a decades-old dispute over demarcation.\\u003C/p\\u003E\\n\\u003Cp\\u003EAs for deportations, which most Assam politicians doubt will ever happen, Sonowal hedges his bets. He says the Assam and Bangladesh governments will have to talk, immediately after alleging that the 34 tribunals set up by Gogoi were denied infrastructure and have done pitifully little to throw out foreigners.\\u003C/p\\u003E\\n\\u003Cp\\u003ESonowal says he is serious about the honour of Assam and the expulsion of illegal immigrants. “We are talking about the Muslims who have illegally settled here,” Sonowal told me at the BJP’s crowded and chaotic office in Guwahati’s Hengrabari area. He also noted that there are more than four million Muslims who have lived in Assam for centuries. He should know his numbers\\u0026#8211;after all, he is a former president of AASU.\\u003C/p\\u003E\\n\\u003Cp\\u003EIf the 53-year-old becomes chief minister, Sarma is sure to be a formidable presence and a possible thorn in his old AASU comrade’s side.\\u003C/p\\u003E\\n\\u003Cp\\u003EWill the savvy and multilingual Sonowal pull off another surprise?\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003EMuslim power: will the AIUDF be kingmaker?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003EIf victorious, the BJP will have to contend with both a resurgent Muslim minority as well as growing restlessness among the state’s tribal groups—they number more than 80—and the tea-garden workers.\\u003C/p\\u003E\\n\\u003Cp\\u003EAssam’s most influential Muslim party is just 11 years old, but so confident that it is fielding 67 candidates. The All India United Democratic Front, signalling its national ambitions, has formed a “secular, anti-BJP” alliance with Bihar’s ruling partnership of Lalu Prasad Yadav’s Rashtriya Janata Dal and Nitish Kumar’s Janata Dal (United).\\u003C/p\\u003E\\n\\u003Cp\\u003EMaulana Badruddin Ajmal, 66, a cleric, founded the AIUDF in 2005 immediately after the Supreme Court struck down the controversial Illegal Migrants (Determination by Tribunals) Act of 1983, which was applicable only in Assam, as being unconstitutional.\\u003C/p\\u003E\\n\\u003Cp\\u003EIn the 2006 state election the AIUDF won 10 seats; in the 2011 election it won 18 to become the state’s main opposition party. In the 2014 parliamentary election the AIUDF won three of Assam’s 14 Lok Sabha seats, as many as the Congress party. In fact, it is now the largest Muslim party in parliament’s lower house. “If there is a hung assembly, we will be a decisive force,” says Aditya Langthasa, the working president of the AIUDF.\\u003C/p\\u003E\\n\\u003Cp\\u003EAjmal, who also controls a formidable perfumery empire based in Mumbai and Dubai, owns huge Agar tree plantations in and around the town of Hojai. Alongside his business interests, Ajmal’s family political dynasty is also expanding rapidly, with his brother and two of his sons turning lawmakers.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe AIUDF seems unstoppable.\\u003C/p\\u003E\\n\\u003Cp\\u003EIt was only a matter of time before Assam’s Muslims flexed their political muscle. Nine of the state’s 27 districts are now Muslim-majority. In the 2011 Census, Assam had India’s second-highest percentage (34.22%, up from 30.9% in 2001) of Muslims after Jammu and Kashmir.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe statistics are telling: Dhubri district, which Ajmal represents in parliament, is 80% Muslim and has a population density of 1,171 persons per square kilometre, whereas in Bangladesh, which Dhubri borders, the density is 1,101 per sq km (Assam’s density is 397; India’s 382).\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003EThe sullen patriots: the Asom Gana Parishad is an also-ran\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003ESo desperate has been the quest for power by the Asom Gana Parishad (AGP)—the state’s most indigenous party—that it formed a government in 1996 with the help of two groups it detested: the Left parties and the Muslim dominated United People’s Party of Assam.\\u003C/p\\u003E\\n\\u003Cp\\u003EThis election, the AGP has agreed to be a junior partner to the BJP; it was allocated 24 seats.\\u003C/p\\u003E\\n\\u003Cp\\u003EPrafulla Kumar Mahanta, the 63-year-old former president of the All Assam Students Union (AASU), was the youngest chief minister in Assam’s 70-year history. The thorny issue of illegal Muslim immigrants from Bangladesh was not resolved during his two terms (1985-89 and 1996-2001.\\u003C/p\\u003E\\n\\u003Cp\\u003ETo make matters more complicated, the Modi government on September 8, 2015, issued an extraordinary executive order to amend India’s passport rules to read that \\u0026#8220;persons belonging to minority communities in Bangladesh and Pakistan, namely, Hindus, Sikhs, Buddhists, Jains, Parsis and Christians who were compelled to seek shelter in India due to religious persecution or fear of religious persecution and entered into India on or before the 31st December, 2014” would be granted citizenship, with or without valid travel documents.\\u003C/p\\u003E\\n\\u003Cp\\u003EThis was a considerable U-turn by Modi, who had vowed during his 2014 election campaign to throw out all infiltrators.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe goalposts for immigration had already been moved from 1948 to 1971 by the pact that Rajiv Gandhi and the agitation leaders signed, and only for Assam. Now Modi was moving them to 2014 for all communities except the Muslims.\\u003C/p\\u003E\\n\\u003Cp\\u003EMahanta is clearly unhappy about his party’s poll alliance with the BJP.  “It was a decision of the party,” he told me at his quarters in the Old MLAs Hostel in the Dispur legislative complex. Mahanta and his followers in the AGP are also deeply suspicious about the Modi government’s offer of citizenship to non-Muslim immigrants from Bangladesh. “We want that the Assam Accord should be implemented in letter and spirit,” says the man who signed the accord in 1985. He says if Modi adopts a different policy, he should rehabilitate the migrants outside Assam.\\u003C/p\\u003E\\n\\u003Cp\\u003E“Otherwise local Assamese people will become a minority in Assam.”\\u003C/p\\u003E\\n\\u003Cp\\u003EMahanta says Modi’s offer of blanket citizenship to Hindu Bangladeshis is comparable with Israel’s embrace of the world’s Jews. Bangladesh’s Hindu minority totalled 20 million in 2013, and they could all seek asylum in India under the new citizenship rules. He asks how Assam can bear that burden. “Certainly I am disappointed…(Modi) swore he would not give an inch of Indian land to Bangladesh. Now he has also given away land to Bangladesh.”\\u003C/p\\u003E\\n\\u003Cp\\u003EDespite his disappointment, Mahanta says it was important for parties such as the BJP and AGP to come together to topple the Congress.\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003ELeft out in the cold: the Communists pray for a comeback\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003EAssam’s economic backwardness and ethnic and religious animosities have not benefited the Left parties. In 1978, just before the anti-foreigner agitation erupted, the Left parties together won 28 seats in the state assembly. They have never tasted such success since.\\u003C/p\\u003E\\n\\u003Cp\\u003EIn 2001 the communist parties did not win a single seat; in 2006 they won just two; and in 2011 they went back to zero. Their cadres came under fierce attack when the Bodo tribals launched their own protests in 1979 (the Bodoland People’s Front is now an ally of the BJP and the AGP).\\u003C/p\\u003E\\n\\u003Cp\\u003EAlthough the Left parties have put up 59 candidates this election, their leaders are not brimming with confidence.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe Communist Party of India (Marxist) office in Hedayetpur in Guwahati is deserted. A red sign says “There is no alternative to socialism”.\\u003C/p\\u003E\\n\\u003Cp\\u003EIsfaqur Rahman, a senior member of the party’s state secretariat tells me that identity politics and ethnic divisions have made things difficult for the communists. Even in the tea gardens, which used to once be strongholds, trade unions have dwindled from 59 to 25. The CPI(M) has only 119 full-time workers in all of Assam, Rahman says.\\u003C/p\\u003E\\n\\u003Cp\\u003E“It is very difficult to attract the younger generation,” Rahman tells me as he lights up another cigarette. The senior leader complains good-naturedly that he himself has to get by on a monthly stipend of just Rs 5,000.\\u003C/p\\u003E\\n\\u003Cp\\u003ERahman is still better off than the homeless in Guwahati.\\u003C/p\\u003E\\n\\u003Cp\\u003EWalking the crowded and ramshackle streets of the state capital, stepping carefully over cement planks covering open and stinking sewers, I remember what Dwijen Sarma, a Gogoi man who was refused a ticket for the coming election, told me was one of his major achievements as a Guwahati city boss and chairman of the Housing Board.  “I have put up roofs at bus-stands so that the homeless can sleep somewhere at night,” he said.\\u003C/p\\u003E\\n\\u003Cp\\u003EIt was time to look elsewhere for clues to Assam’s future.\\u003C/p\\u003E\\n\\u003Cp class=\\\"annotatable\\\"\\u003E\\u003Cem\\u003EThis is the third in a series of reports on the political and social scene in Assam which goes to polls today (April 4).\\u003C/em\\u003E\\u003C/p\\u003E\\n\\u003Cp class=\\\"annotatable\\\"\\u003E\\u003Cem\\u003EFollow Chaitanya on Twitter \\u003Ca href=\\\"https://twitter.com/ChaitanyaKalbag\\\" target=\\\"_blank\\\"\\u003E@chaitanyakalbag\\u003C/a\\u003E. We welcome your comments at \\u003Ca href=\\\"http://ideas.india@qz.com/\\\"\\u003Eideas.india@qz.com\\u003C/a\\u003E.\\u003C/em\\u003E\\u003C/p\\u003E\\n\\u003Ch2 class=\\\"anno-right\\\"\\u003E\\u003C/h2\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=653718\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"pubDate\":\"2016-04-03T21:30:31-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/653718\",\"dc_creator\":\"Chaitanya Kalbag\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2016/04/ap_239731471852.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Elephants are lined up for tourists to ride/\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2016/04/ap_239731471852.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/653718/here-are-assams-political-suitors-as-the-state-goes-to-poll-today/"], ["published_at", Mon, 04 Apr 2016 01:30:31 UTC +00:00], ["title", "Here are Assam&#8217;s political suitors as the state goes to poll today"], ["updated_at", Mon, 04 Apr 2016 06:36:14 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mEntry Load (4.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 4]]
+Completed 200 OK in 766ms (Views: 641.7ms | ActiveRecord: 123.8ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2016-04-04 02:36:18 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSQL (70.1ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:36:18.537444' WHERE "feeds"."id" = 4[0m
+  [1m[35m (1.0ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (41.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 4]]
+Completed 200 OK in 679ms (Views: 565.1ms | ActiveRecord: 112.7ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:36:25 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:38:42 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 576ms (Views: 575.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:38:43 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (1.4ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:44:17 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 431ms (Views: 430.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:44:18 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.7ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 110ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:31 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:44:32 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:45:06 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 119ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:45:07 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:46:33 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:46:47 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (28.9ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:46:47.623591' WHERE "feeds"."id" = 3[0m
+  [1m[35m (1.8ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (32.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Mon, 04 Apr 2016 06:46:47 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/2016/04/04/472922804/opening-day-in-major-league-baseball-featured-3-games?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"Opening Day In Major League Baseball Featured 3 Games\",\"link\":\"http://www.npr.org/2016/04/04/472922804/opening-day-in-major-league-baseball-featured-3-games?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"Pittsburgh beat St. Louis 4-1, Toronto won over Tampa Bay 5-3 and Kansas City defeated the N.Y. Mets 4-3. Most every other club starts up Monday. Detroit and Miami are the last to open, on Tuesday.\",\"content_encoded\":\"\\u003Cp\\u003EPittsburgh beat St. Louis 4-1, Toronto won over Tampa Bay 5-3 and Kansas City defeated the N.Y. Mets 4-3. Most every other club starts up Monday. Detroit and Miami are the last to open, on Tuesday.\\u003C/p\\u003E\",\"pubDate\":\"2016-04-04T02:41:08-04:00\",\"guid\":\"http://www.npr.org/2016/04/04/472922804/opening-day-in-major-league-baseball-featured-3-games?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"The Associated Press\"}"], ["link", "http://www.npr.org/2016/04/04/472922804/opening-day-in-major-league-baseball-featured-3-games?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Mon, 04 Apr 2016 06:41:08 UTC +00:00], ["title", "Opening Day In Major League Baseball Featured 3 Games"], ["updated_at", Mon, 04 Apr 2016 06:46:47 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (12.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 283ms (Views: 206.1ms | ActiveRecord: 75.9ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:46:49 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSQL (1.3ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:46:49.864108' WHERE "feeds"."id" = 3
+  [1m[36m (0.9ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 161ms (Views: 157.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:46:55 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSQL (1.5ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:46:55.218543' WHERE "feeds"."id" = 3
+  [1m[36m (0.9ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 164ms (Views: 159.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2016-04-04 02:47:12 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:47:12.738855' WHERE "feeds"."id" = 3
+  [1m[36m (1.1ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 701ms (Views: 696.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:48:36 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.7ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2016-04-04 02:48:40 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:48:40.442160' WHERE "feeds"."id" = 2[0m
+  [1m[35m (0.8ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 2]]
+Completed 200 OK in 328ms (Views: 323.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2016-04-04 02:48:57 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:48:57.216090' WHERE "feeds"."id" = 2[0m
+  [1m[35m (0.7ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 2]]
+Completed 200 OK in 327ms (Views: 322.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:49:43 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:49:54 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (28.4ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:49:54.234267' WHERE "feeds"."id" = 7
+  [1m[36m (0.7ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 405ms (Views: 373.8ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:50:02 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (1.5ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:50:02.779838' WHERE "feeds"."id" = 7
+  [1m[36m (1.0ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (0.9ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 278ms (Views: 272.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/feeds/7" for 127.0.0.1 at 2016-04-04 02:50:34 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:50:34.845716' WHERE "feeds"."id" = 7
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 7]]
+Completed 200 OK in 296ms (Views: 292.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:50:47 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:50:51 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:50:51.089888' WHERE "feeds"."id" = 6[0m
+  [1m[35m (0.7ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 6]]
+Completed 200 OK in 368ms (Views: 363.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:50:58 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mSQL (1.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:50:58.672283' WHERE "feeds"."id" = 6[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (2.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 6]]
+Completed 200 OK in 331ms (Views: 324.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/views/feeds/index.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/views/feeds/index_item.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/views/feeds/show.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/routers/app_router.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-04-04 02:51:41 -0400
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:51:42 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mSQL (3.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:51:42.032867' WHERE "feeds"."id" = 6[0m
+  [1m[35m (1.2ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 6]]
+Completed 200 OK in 345ms (Views: 337.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:51:42 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mSQL (19.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2016-04-04 06:51:42.422159' WHERE "feeds"."id" = 6[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 6]]
+Completed 200 OK in 484ms (Views: 461.0ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:52:00 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/6" for 127.0.0.1 at 2016-04-04 02:52:04 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2016-04-04 06:52:04.360525' WHERE "feeds"."id" = 6
+  [1m[36m (1.1ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (2.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 6]]
+Completed 200 OK in 365ms (Views: 359.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2016-04-04 02:52:05 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
