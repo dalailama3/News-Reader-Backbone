@@ -2,6 +2,7 @@
 <h3><%= feed.escape("title") %> Feed</h3>
 
 <button class="refresh">Refresh</button>
+<a href="#">Back to Index</a>
 <ul>
   <% _.each(feed.entries().models, function (entry) { %>
     <li><%= entry.escape("title") %></li>

@@ -4,9 +4,11 @@ window.NewsReader.Collections.Feeds = Backbone.Collection.extend({
 
   getOrFetch: function (id) {
     var feeds = this;
-    var feed = this.get(id);
+    var feed;
 
-    if (typeof feed === "undefined") {
+    if (feed = this.get(id)) {
+      feed.fetch()
+    } else {
       feed = new NewsReader.Models.Feed({id: id});
       feed.fetch({
         success: function () {
@@ -14,6 +16,7 @@ window.NewsReader.Collections.Feeds = Backbone.Collection.extend({
         }
       });
     }
+        
     return feed;
   }
 });

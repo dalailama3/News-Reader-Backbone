@@ -13,5 +13,20 @@ window.NewsReader.Views.FeedsNew = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
+
+    var newFeed = new NewsReader.Models.Feed();
+    var params = $(event.currentTarget).serializeJSON()["feed"];
+    newFeed.set(params);
+
+    newFeed.save({}, {
+      success: function () {
+        NewsReader.Collections.feeds.add(newFeed);
+        Backbone.history.navigate("", {trigger: true});
+      },
+      failure: function (error) {
+        console.log(error);
+
+      }
+    });
   }
 });

@@ -19,7 +19,7 @@ window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
       collection: NewsReader.Collections.feeds
     });
 
-    NewsReader.Collections.feeds.fetch();
+    NewsReader.Collections.feeds.fetch({reset: true});
     this._swapView(indexView);
   },
 
@@ -30,8 +30,6 @@ window.NewsReader.Routers.AppRouter = Backbone.Router.extend({
     var showView = new NewsReader.Views.FeedsShow({
       model: feed
     });
-
-
 
     this._swapView(showView);
 

@@ -5,7 +5,12 @@ window.NewsReader.Views.FeedsIndexItem = Backbone.View.extend({
   },
 
   deleteFeed: function (event) {
-    this.model.destroy();
+    this.model.destroy({
+      success: function () {
+        Backbone.history.navigate("", {trigger: true});
+      }
+    });
+
   },
   render: function () {
 
